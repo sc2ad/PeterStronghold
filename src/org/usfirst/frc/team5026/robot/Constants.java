@@ -8,13 +8,13 @@ package org.usfirst.frc.team5026.robot;
 public class Constants {
 	
 	// Joystick
-	public static final double DRIVE_JOYSTICK_X_DEADZONE = 0.15;
-	public static final double DRIVE_JOYSTICK_Y_DEADZONE = 0.2;
+	public static final double DRIVE_JOYSTICK_X_DEADZONE = 0.3;
+	public static final double DRIVE_JOYSTICK_Y_DEADZONE = 0.3;
 	public static final double DRIVE_JOYSTICK_X_SCALING = 0.5;
 	public static final double DRIVE_JOYSTICK_Y_SCALING = 1;
 
 	// Motors
-	public static final double DRIVE_MOTORS_DEAD_ZONE = 0.1; // Value required to overcome static friction
+	public static final double DRIVE_MOTORS_DEAD_ZONE = 0.35; // Value required to overcome static friction
 	
 	// Encoder
 	public static final int WHEEL_RADIUS = 6; // Inches

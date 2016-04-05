@@ -1,41 +1,41 @@
 package org.usfirst.frc.team5026.lib;
 
-import edu.wpi.first.wpilibj.Joystick;
+import org.usfirst.frc.team5026.robot.Constants;
 
-/**
- * Accounts for joystick deadzones and drive motor deadzones
- */
+import edu.wpi.first.wpilibj.Joystick;
 
 public class PantherJoystick extends Joystick {
 	
-	private double deadzoneX;
-	private double deadzoneY;
-	private double motorDeadzone;
-	private double scalingX;
-	private double scalingY;
+	public int power;
+	public double m_deadzoneX;
+	public double m_deadzoneY;
+	double motorDeadZone;
+	double scalingX = 0.5; // slope of joystick curve
+	double scalingY = 1; // slope of joystick curve
 	
-	public PantherJoystick(int port, double deadzoneX, double deadzoneY, double motorDeadzone, double scalingX, double scalingY) {
+	public PantherJoystick(int port, double deadzoneX, double deadzoneY, double driveMotorsDeadZone, double driveJoystickXScaling, double driveJoystickYScaling) {
 		super(port);
-		this.deadzoneX = deadzoneX;
-		this.deadzoneY = deadzoneY;
-		this.motorDeadzone = motorDeadzone;
-		this.scalingX = scalingX;
-		this.scalingY = scalingY;
+		m_deadzoneX = deadzoneX;
+		m_deadzoneY = deadzoneY;
+		scalingX = driveJoystickXScaling;
+		scalingY = driveJoystickYScaling;
+		motorDeadZone = driveMotorsDeadZone;
+		power = 1;
 	}
-	
+
 	public double getXAxis() {
 		double value;
 		double negative = (Math.abs(getX()) / getX());
-		double xAxis = getX() - negative * deadzoneX;
+		double xAxis = getX() - negative * m_deadzoneX;
 		
-		if(Math.abs(getX()) > deadzoneX) {
+		if(Math.abs(getX()) > m_deadzoneX) {
 			if(xAxis < 0) {
-				value = -xAxis;
+				value = -Math.pow(Math.abs(xAxis), power);
 			}
 			else {
-				value = xAxis;
+				value = Math.pow(Math.abs(xAxis), power);
 			}
-			value = scalingX * value + negative * motorDeadzone;
+			value = scalingX * value + negative * motorDeadZone;
 		}
 		else {
 			value = 0;
@@ -47,21 +47,23 @@ public class PantherJoystick extends Joystick {
 	public double getYAxis() {
 		double value;
 		double negative = (Math.abs(getY()) / getY());
-		double yAxis = getY() - negative * deadzoneY;
+		double yAxis = getY() - negative * m_deadzoneY;
 		
-		if(Math.abs(getY()) > deadzoneY) {
+		if(Math.abs(getY()) > m_deadzoneY) {
 			if(yAxis < 0) {
-				value = -yAxis;
+				value = -Math.pow(Math.abs(yAxis), power);
 			}
 			else {
-				value = yAxis;
+				value = Math.pow(Math.abs(yAxis), power);
 			}
-			value = scalingY * value + negative * motorDeadzone;
+			value = scalingY * value + negative * motorDeadZone;
 		}
 		else {
 			value = 0;
 		}
-		
 		return value;
 	}
+
+	
+
 }

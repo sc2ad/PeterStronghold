@@ -12,6 +12,7 @@ import org.usfirst.frc.team5026.robot.commands.StageTwoOuttake;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -39,6 +40,7 @@ public class OI {
 	public Button boardSwitch13;
 	
 	public OI() {
+		SmartDashboard.putString("INITS", "NONE");
 		driveJoystick = new PantherJoystick(RobotMap.DRIVE_JOYSTICK, Constants.DRIVE_JOYSTICK_X_DEADZONE, Constants.DRIVE_JOYSTICK_Y_DEADZONE, 
 				Constants.DRIVE_MOTORS_DEAD_ZONE, Constants.DRIVE_JOYSTICK_X_SCALING, Constants.DRIVE_JOYSTICK_Y_SCALING);
 		buttonBoard = new Joystick(RobotMap.BUTTON_BOARD);
@@ -55,7 +57,6 @@ public class OI {
 	public void initButtons() {
 		initDriveJoystick();
 		initButtonBoard();
-		mapButtonsToCommands();
 	}
 	
 	// Construct and add commands to buttons
@@ -77,9 +78,10 @@ public class OI {
 		boardSwitch11 = new JoystickButton(buttonBoard, RobotMap.BOARD_SWITCH_11);
 		boardSwitch12 = new JoystickButton(buttonBoard, RobotMap.BOARD_SWITCH_12);
 		boardSwitch13 = new JoystickButton(buttonBoard, RobotMap.BOARD_SWITCH_13);
+		SmartDashboard.putString("INITS", "Board Done");
 	}
 	
-	private void mapButtonsToCommands() {
+	public void mapButtonsToCommands() {
 		// Button Board
 		boardButton1.whenPressed(new RoutineShootWithJoystick());
 		//boardButton2.whenPressed(new RoutineBatterShot());

@@ -4,6 +4,7 @@ import org.usfirst.frc.team5026.lib.PantherJoystick;
 import org.usfirst.frc.team5026.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Used to control drive base with joystick
@@ -24,8 +25,11 @@ public class ArcadeDriveWithJoystick extends Command {
     }
 
     protected void execute() {
-    	Robot.drive.useArcadeDrive(-joystick.getXAxis(), joystick.getYAxis());
-    	
+    	Robot.drive.useArcadeDrive(-joystick.getYAxis(), -joystick.getXAxis());
+    	SmartDashboard.putNumber("X", -joystick.getXAxis());
+    	SmartDashboard.putNumber("Y", joystick.getYAxis());
+    	SmartDashboard.putNumber("X Joystick" , joystick.getX());
+    	SmartDashboard.putNumber("Y Joystick", joystick.getY());
     }
 
     protected boolean isFinished() {

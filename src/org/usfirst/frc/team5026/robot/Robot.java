@@ -237,6 +237,7 @@ public class Robot extends IterativeRobot {
 		shooter = new Shooter(lookupU, lookupL);
 		setupTwoGroup(hardware.lowerShooterGroup, true, false);
 		setupTwoGroup(hardware.upperShooterGroup, true, true);
+		oi.mapButtonsToCommands();
 		NetworkTable.setServerMode();
 		
         autonomousChooser = new SendableChooser();
@@ -285,19 +286,6 @@ public class Robot extends IterativeRobot {
 	 */
     public void autonomousInit() {
         autonomousCommand = (Command) autonomousChooser.getSelected();
-        
-		String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
-		switch(autoSelected) {
-		case "Cross Low Bar":
-			autonomousCommand = new CrossLowBarAutonomous();
-			break;
-		case "Spy Box Shot":
-			autonomousCommand = new SpyBotAutonomous();
-		default:
-			autonomousCommand = new DoNothingAutonomous();
-			break;
-		}
-    	
 		if (autonomousCommand != null) autonomousCommand.start();
     }
 

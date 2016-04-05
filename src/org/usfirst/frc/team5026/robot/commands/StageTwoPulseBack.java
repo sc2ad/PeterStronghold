@@ -22,7 +22,8 @@ public class StageTwoPulseBack extends Command {
     protected void execute() {
     	Robot.stageTwo.outtakeBall();
     	double x = 0;
-    	for(int i = 0; i < seconds * 1000; i++) {
+    	
+    	for (int i = 0; i < seconds * 1000; i++) {
     		x = i * i * i / (2.545 * i) + i / 72;
     	}
     	System.out.println(x);

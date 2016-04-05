@@ -9,7 +9,7 @@ public class RoutineShootBall extends CommandGroup {
     
     public  RoutineShootBall() {
     	addSequential(new RoutineShooterSpinupStabilize());
-    	addSequential(new ShooterQueue());
+    	addSequential(new StageTwoQueueToShooter());
     	addSequential(new ShooterSlowStop());
     }
 }

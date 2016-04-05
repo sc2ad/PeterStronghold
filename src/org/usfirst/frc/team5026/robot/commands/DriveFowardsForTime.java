@@ -13,11 +13,12 @@ public class DriveFowardsForTime extends Command {
 	
 	private Timer timer = new Timer();
 	private double seconds;
-	
+	private double negative;
 
     public DriveFowardsForTime(double seconds) {
     	requires(Robot.drive);
-    	this.seconds = seconds;
+    	this.seconds = Math.abs(seconds);
+    	this.negative = Math.abs(seconds) / seconds;
     }
 
     protected void initialize() {
@@ -27,7 +28,7 @@ public class DriveFowardsForTime extends Command {
     }
 
     protected void execute() {
-    	Robot.drive.setLeftRightMotors(0.75, -0.75);
+    	Robot.drive.setLeftRightMotors(0.5 * negative, 0.5 * negative);
     }
 
     protected boolean isFinished() {

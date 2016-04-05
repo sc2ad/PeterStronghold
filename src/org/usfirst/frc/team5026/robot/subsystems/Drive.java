@@ -6,6 +6,7 @@ import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.robot.commands.ArcadeDriveWithJoystick;
 
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -20,7 +21,7 @@ public class Drive extends Subsystem {
 	
 	public Drive() {
 		joystick = Robot.oi.getDriveJoystick();
-		drive = new RobotDrive(hardware.leftDrive, hardware.rightDrive);
+		drive = new RobotDrive(new Talon(1), new Talon(0)); // hardware.leftDrive, hardware.rightDrive
 	}
 	
 	/**

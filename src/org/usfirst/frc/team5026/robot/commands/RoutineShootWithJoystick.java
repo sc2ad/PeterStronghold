@@ -10,7 +10,7 @@ public class RoutineShootWithJoystick extends CommandGroup {
     public RoutineShootWithJoystick() {
         addSequential(new RoutineShooterSpinupStabilize());
         addSequential(new ShooterWaitForButton(1));
-        addSequential(new ShooterQueue());
+        addSequential(new StageTwoQueueToShooter());
         addSequential(new ShooterSlowStop());
     }
 }
