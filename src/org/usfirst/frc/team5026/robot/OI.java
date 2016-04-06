@@ -22,6 +22,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class OI {
 	
 	private PantherJoystick driveJoystick;
+	private PantherJoystick turnJoystick; // FOR TESTING PURPOSES
 	
 	private Joystick buttonBoard;
 	
@@ -44,11 +45,19 @@ public class OI {
 		driveJoystick = new PantherJoystick(RobotMap.DRIVE_JOYSTICK, Constants.DRIVE_JOYSTICK_X_DEADZONE, Constants.DRIVE_JOYSTICK_Y_DEADZONE, 
 				Constants.DRIVE_MOTORS_DEAD_ZONE, Constants.DRIVE_JOYSTICK_X_SCALING, Constants.DRIVE_JOYSTICK_Y_SCALING);
 		buttonBoard = new Joystick(RobotMap.BUTTON_BOARD);
+		
+		turnJoystick = new PantherJoystick(3, Constants.DRIVE_JOYSTICK_X_DEADZONE, Constants.DRIVE_JOYSTICK_Y_DEADZONE, 
+				Constants.DRIVE_MOTORS_DEAD_ZONE, Constants.DRIVE_JOYSTICK_X_SCALING, Constants.DRIVE_JOYSTICK_Y_SCALING);
 		initButtons();
 	}
 	
 	public PantherJoystick getDriveJoystick() {
 		return driveJoystick;
+	}
+	
+	// For testing purposes
+	public PantherJoystick getTurnJoystick() {
+		return turnJoystick;
 	}
 	public Joystick getButtonBoard() {
 		return buttonBoard;

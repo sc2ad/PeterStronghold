@@ -25,7 +25,7 @@ public class PantherJoystick extends Joystick {
 
 	public double getXAxis() {
 		double value;
-		double negative = (Math.abs(getX()) / getX());
+		double negative = (Math.abs(getX()) / getX()); 
 		double xAxis = getX() - negative * m_deadzoneX;
 		
 		if(Math.abs(getX()) > m_deadzoneX) {
