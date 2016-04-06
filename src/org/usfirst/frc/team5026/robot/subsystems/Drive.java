@@ -21,7 +21,7 @@ public class Drive extends Subsystem {
 	
 	public Drive() {
 		joystick = Robot.oi.getDriveJoystick();
-		drive = new RobotDrive(new Talon(1), new Talon(0)); // hardware.leftDrive, hardware.rightDrive
+		drive = new RobotDrive(new Talon(1), new Talon(0)); // hardware.leftDrive, hardware.rightDrive new Talon(1), new Talon(0));
 	}
 	
 	/**
@@ -38,6 +38,7 @@ public class Drive extends Subsystem {
     
 	public void setLeftRightMotors(double leftMotors, double rightMotors) {
 		drive.setLeftRightMotorOutputs(leftMotors, rightMotors);
+		System.out.println(leftMotors + ", " + rightMotors);
 	}
 	
 	public void stopDriveMotors() {

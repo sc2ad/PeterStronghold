@@ -7,6 +7,7 @@ import org.usfirst.frc.team5026.robot.autonomous.DoNothingAutonomous;
 import org.usfirst.frc.team5026.robot.autonomous.SpyBotAutonomous;
 import org.usfirst.frc.team5026.robot.subsystems.Drive;
 import org.usfirst.frc.team5026.robot.subsystems.IntakeArm;
+import org.usfirst.frc.team5026.robot.subsystems.RotationAlign;
 import org.usfirst.frc.team5026.robot.subsystems.Shooter;
 import org.usfirst.frc.team5026.robot.subsystems.StageTwo;
 
@@ -37,6 +38,7 @@ public class Robot extends IterativeRobot {
 	public static IntakeArm intakeArm;
 	public static StageTwo stageTwo;
 	public static Shooter shooter;
+	public static RotationAlign rotate;
 
     Command autonomousCommand;
     SendableChooser autonomousChooser;
@@ -237,6 +239,7 @@ public class Robot extends IterativeRobot {
 		shooter = new Shooter(lookupU, lookupL);
 		setupTwoGroup(hardware.lowerShooterGroup, true, false);
 		setupTwoGroup(hardware.upperShooterGroup, true, true);
+		rotate = new RotationAlign();
 		oi.mapButtonsToCommands();
 		NetworkTable.setServerMode();
 		

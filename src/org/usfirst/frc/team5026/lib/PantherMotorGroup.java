@@ -59,13 +59,14 @@ public class PantherMotorGroup implements SpeedController {
 		}
 	}
 
-	/*
+
+	
 	@Override
 	public void stopMotor() {
 		for(SpeedController speedController : motorGroup) {
 			speedController.stopMotor();
 		}
 	}
-	*/
+	
 
 }
