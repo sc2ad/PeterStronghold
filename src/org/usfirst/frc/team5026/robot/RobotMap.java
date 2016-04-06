@@ -8,19 +8,19 @@ package org.usfirst.frc.team5026.robot;
 public class RobotMap {
 	
 	// Drive Motors (All Talon SR)
-	public static final int LEFT_DRIVE_MOTOR_1 = 2; //2
+	public static final int LEFT_DRIVE_MOTOR_1 = 2; //2, 1
 	public static final int LEFT_DRIVE_MOTOR_2 = 3;
 	public static final int LEFT_DRIVE_MOTOR_3 = 4;
 	
-	public static final int RIGHT_DRIVE_MOTOR_1 = 5; //5
+	public static final int RIGHT_DRIVE_MOTOR_1 = 5; //5, 0
 	public static final int RIGHT_DRIVE_MOTOR_2 = 6;
 	public static final int RIGHT_DRIVE_MOTOR_3 = 7;
 	
 	// Intake Motor (Talon SR)
-	public static final int INTAKE_ROLLER_MOTOR = 8; //0
+	public static final int INTAKE_ROLLER_MOTOR = 8; //0, 8
 	
 	// Stage Two Motor (Talon SRX)
-	public static final int STAGE_TWO_MOTOR = 3;
+	public static final int STAGE_TWO_MOTOR = 3; //3, 1
 	
 	// Shooter Motors (ALL Talon SRX)
 	public static final int UPPER_SHOOTER_MOTOR_1 = 4; // Has encoder

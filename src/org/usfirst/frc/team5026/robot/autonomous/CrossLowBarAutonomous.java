@@ -13,8 +13,6 @@ public class CrossLowBarAutonomous extends CommandGroup {
     
     public CrossLowBarAutonomous() {
     	addSequential(new IntakeArmLower());
-    	addSequential(new DriveFowardsForTime(2));
-    	addSequential(new DriveFowardsForTime(-2));
-    	addSequential(new DriveFowardsForTime(2));
+    	addSequential(new DriveFowardsForTime(3));
     }
 }

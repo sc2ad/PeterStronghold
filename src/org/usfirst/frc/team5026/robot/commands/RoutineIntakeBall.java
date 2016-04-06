@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class RoutineIntakeBall extends CommandGroup {
     
-    public  RoutineIntakeBall() {
+    public RoutineIntakeBall() {
     	addSequential(new IntakeRollerSpinIn());
     	addSequential(new StageTwoIntake());
     	addSequential(new StageTwoPulseBack());

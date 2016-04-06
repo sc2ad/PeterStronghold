@@ -10,7 +10,7 @@ public class Constants {
 	// Joystick
 	public static final double DRIVE_JOYSTICK_X_DEADZONE = 0.3;
 	public static final double DRIVE_JOYSTICK_Y_DEADZONE = 0.3;
-	public static final double DRIVE_JOYSTICK_X_SCALING = 0.9; //0.5
+	public static final double DRIVE_JOYSTICK_X_SCALING = 0.5;
 	public static final double DRIVE_JOYSTICK_Y_SCALING = 1;
 
 	// Motors
@@ -48,4 +48,5 @@ public class Constants {
 	public static final int X_MAX_DIFFERENCE = 205; // At 30 degrees
 	public static final double X_MAX_ANGLE = 30;
 	public static final double ANGLE_THRESHOLD = 5;
+	public static final double SECONDS_PER_ANGLE = 0.017;
 }

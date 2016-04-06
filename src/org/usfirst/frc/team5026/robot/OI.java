@@ -1,8 +1,10 @@
 package org.usfirst.frc.team5026.robot;
 
 import org.usfirst.frc.team5026.lib.PantherJoystick;
+import org.usfirst.frc.team5026.robot.commands.DriveTurnDegrees;
 import org.usfirst.frc.team5026.robot.commands.IntakeArmRaise;
 import org.usfirst.frc.team5026.robot.commands.IntakeRollerSpinOut;
+import org.usfirst.frc.team5026.robot.commands.RoutineAutoAlign;
 import org.usfirst.frc.team5026.robot.commands.RoutineIntakeBall;
 import org.usfirst.frc.team5026.robot.commands.RoutineShootWithJoystick;
 import org.usfirst.frc.team5026.robot.commands.ShooterPistonsRaise;
@@ -94,7 +96,8 @@ public class OI {
 		// Button Board
 		boardButton1.whenPressed(new RoutineShootWithJoystick());
 		//boardButton2.whenPressed(new RoutineBatterShot());
-		//boardButton3.whenPressed(new RoutineAutoAlign());
+		boardButton2.whenPressed(new DriveTurnDegrees(90));
+		boardButton3.whenPressed(new RoutineAutoAlign());
 		boardButton4.whenPressed(new ShooterSlowStop());
 		boardButton5.whenPressed(new RoutineIntakeBall());
 		boardButton6.whileHeld(new IntakeRollerSpinOut());

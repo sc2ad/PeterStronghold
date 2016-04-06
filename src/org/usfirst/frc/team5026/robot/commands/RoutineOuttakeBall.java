@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class RoutineOuttakeBall extends CommandGroup {
     
-    public  RoutineOuttakeBall() {
+    public RoutineOuttakeBall() {
     	addParallel(new StageTwoOuttake());
     	addParallel(new IntakeRollerSpinOut());
     }
